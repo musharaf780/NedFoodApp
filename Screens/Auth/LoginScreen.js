@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Image, TextInput } from "react-native";
 import Color from "../../Constants/Color";
 import MyInput from "../../Components/MyInput";
 import MyAuthButton from "../../Components/MyAuthButton";
-const LoginScreen = () => {
+
+const LoginScreen = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const loginHandler = () => {
+    if (email === "") {
+      alert("Please enter your email first");
+    } else if (password === "") {
+      alert("Please enter your password first");
+    } else if (email === "musharaf@gmail.com" && password === "admin123") {
+      props.navigation.navigate("HomeScreen");
+    } else {
+      alert("Please enter a valid email or password");
+    }
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <View
@@ -26,16 +42,21 @@ const LoginScreen = () => {
         <MyInput
           placeholder="Please enter your email address"
           title="Email Address"
+          onChangeText={(text) => {
+            setEmail(text);
+          }}
         />
-        <MyInput placeholder="Please enter your password" title="Password" />
+        <MyInput
+          secureTextEntry
+          placeholder="Please enter your password"
+          title="Password"
+          onChangeText={(text) => {
+            setPassword(text);
+          }}
+        />
 
         <View>
-          <MyAuthButton
-            onPress={() => {
-              alert("Yahoo its press 1");
-            }}
-            btnTitle="LOGIN"
-          />
+          <MyAuthButton onPress={loginHandler} btnTitle="LOGIN" />
         </View>
       </View>
     </View>

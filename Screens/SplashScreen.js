@@ -11,9 +11,9 @@ const SplashScreen = () => {
         alignItems: "center",
       }}
     >
-      <Image
+      <Imagea
         source={require("../assets/Images/log.png")}
-        style={{ height: 100, width: 100 }}
+        style={{ height: 100, width: 100}}
       />
       <Text style={{ fontSize: 15, fontWeight: "bold", textAlign: "center" }}>
         FOOD APP

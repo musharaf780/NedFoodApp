@@ -18,6 +18,8 @@ const MyInput = (props) => {
         }}
       >
         <TextInput
+          secureTextEntry={props.secureTextEntry}
+          onChangeText={props.onChangeText}
           placeholder={props.placeholder}
           style={{ width: "100%", height: "100%" }}
         />
