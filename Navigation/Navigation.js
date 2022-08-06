@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import LoginScreen from "../Screens/Auth/LoginScreen";
-import HomeScreen from "../Screens/Home/HomeScreen";
+import CategoryScreen from "../Screens/Home/CategoryScreen";
 import SplashScreen from "../Screens/SplashScreen";
-import ScrollingScreen from "../Screens/Home/ScrollingScreen";
+import AllMealsScreen from "../Screens/Home/AllMealsScreen";
+
 const Stack = createStackNavigator();
+
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="HomeScreen">
+      <Stack.Navigator>
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="SplashScreen"
+          component={SplashScreen}
+        />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
-        <Stack.Screen name="ScrollingScreen" component={ScrollingScreen} />
+        <Stack.Screen name="Category" component={CategoryScreen} />
+        <Stack.Screen name="AllMealsScreen" component={AllMealsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

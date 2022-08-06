@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, Image } from "react-native";
 
-const SplashScreen = () => {
+const SplashScreen = (props) => {
+  useEffect(() => {
+    setTimeout(() => {
+      props.navigation.replace("LoginScreen");
+    }, 3000);
+  }, []);
   return (
     <View
       style={{
@@ -11,9 +16,9 @@ const SplashScreen = () => {
         alignItems: "center",
       }}
     >
-      <Imagea
+      <Image
         source={require("../assets/Images/log.png")}
-        style={{ height: 100, width: 100}}
+        style={{ height: 100, width: 100 }}
       />
       <Text style={{ fontSize: 15, fontWeight: "bold", textAlign: "center" }}>
         FOOD APP

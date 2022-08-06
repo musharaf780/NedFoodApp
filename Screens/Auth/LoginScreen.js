@@ -9,15 +9,16 @@ const LoginScreen = (props) => {
   const [password, setPassword] = useState("");
 
   const loginHandler = () => {
-    if (email === "") {
-      alert("Please enter your email first");
-    } else if (password === "") {
-      alert("Please enter your password first");
-    } else if (email === "musharaf@gmail.com" && password === "admin123") {
-      props.navigation.navigate("HomeScreen");
-    } else {
-      alert("Please enter a valid email or password");
-    }
+    // if (email === "") {
+    //   alert("Please enter your email first");
+    // } else if (password === "") {
+    //   alert("Please enter your password first");
+    // } else if (email === "musharaf@gmail.com" && password === "admin123") {
+    // props.navigation.navigate("CategoryScreens");
+    // } else {
+    //   alert("Please enter a valid email or password");
+    // }
+    props.navigation.navigate("Category");
   };
 
   return (
