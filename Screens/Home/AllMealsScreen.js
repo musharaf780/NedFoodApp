@@ -21,7 +21,11 @@ const AllMealsScreen = (props) => {
         renderItem={(itemData) => {
           return (
             <TouchableOpacity
-              onPress={() => {}}
+              onPress={() => {
+                props.navigation.navigate("MealsDetailScreen", {
+                  mealsData: itemData.item,
+                });
+              }}
               style={{
                 height: 100,
                 width: "97%",

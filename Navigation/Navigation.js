@@ -6,7 +6,7 @@ import LoginScreen from "../Screens/Auth/LoginScreen";
 import CategoryScreen from "../Screens/Home/CategoryScreen";
 import SplashScreen from "../Screens/SplashScreen";
 import AllMealsScreen from "../Screens/Home/AllMealsScreen";
-
+import MealsDetailScreen from "../Screens/Home/MealsDetailScreen";
 const Stack = createStackNavigator();
 
 const Navigation = () => {
@@ -21,6 +21,7 @@ const Navigation = () => {
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="Category" component={CategoryScreen} />
         <Stack.Screen name="AllMealsScreen" component={AllMealsScreen} />
+        <Stack.Screen name="MealsDetailScreen" component={MealsDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

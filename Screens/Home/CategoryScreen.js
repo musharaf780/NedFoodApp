@@ -5,11 +5,12 @@ import {
   FlatList,
   ImageBackground,
   TouchableOpacity,
+  SafeAreaView,
 } from "react-native";
 import { CATEGORY } from "../../Data/DummyData";
 const CategoryScreen = (props) => {
   return (
-    <View>
+    <SafeAreaView>
       <View style={{ marginHorizontal: 10, marginTop: 10 }}>
         <FlatList
           data={CATEGORY}
@@ -65,7 +66,7 @@ const CategoryScreen = (props) => {
           }}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
